@@ -32,14 +32,16 @@ def parse_rupiah_to_int(val: Optional[str]) -> int:
     def has_unit(*keywords: str) -> bool:
         return any(k in lower for k in keywords)
 
-    if has_unit("miliar", "milyar"):
+    # Order matters: check longer/more-specific units first to avoid false matches.
+    # "t" alone is too broad (matches any word with 't'), so we only use explicit "triliun".
+    if has_unit("triliun"):
+        multiplier = 1_000_000_000_000
+    elif has_unit("miliar", "milyar"):
         multiplier = 1_000_000_000
     elif has_unit("juta"):
         multiplier = 1_000_000
     elif has_unit("ribu"):
         multiplier = 1_000
-    elif has_unit("triliun", "t"):
-        multiplier = 1_000_000_000_000
 
     # Extract number part
     # Handle "1.2" or "1,2" as decimal; we will drop decimals.
