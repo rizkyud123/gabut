@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APBD Tracker — Uangmu Jadi Apa?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <span class="brand-icon">🏛️</span>
+      <span class="brand-text">APBD<span class="brand-accent">Tracker</span></span>
+    </div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" data-tab="leaderboard">🏆 Leaderboard</button>
+      <button class="nav-tab" data-tab="kalkulator">💰 Kalkulator Pajak</button>
+      <button class="nav-tab" data-tab="detektif">🔍 Detektif Anggaran</button>
+    </div>
+    <div class="nav-badge">TA 2026</div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">📊 Transparansi Anggaran Daerah</div>
+    <h1 class="hero-title">Uangmu <span class="gradient-text">Jadi Apa</span> Saja?</h1>
+    <p class="hero-subtitle">Lacak, bandingkan, dan pahami bagaimana pajak daerahmu digunakan. Data APBD 2026 dalam genggamanmu.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num" id="hero-total-daerah">6</span>
+        <span class="stat-label">Daerah</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="stat-num" id="hero-total-anggaran">Rp193T</span>
+        <span class="stat-label">Total Anggaran</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="stat-num" id="hero-proyek-unik">6</span>
+        <span class="stat-label">Proyek Viral</span>
+      </div>
+    </div>
+    <button class="hero-cta" onclick="scrollToSection('leaderboard')">Mulai Eksplorasi ↓</button>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-card fc1">
+      <span class="fc-emoji">🎓</span>
+      <span class="fc-label">Pendidikan 25%</span>
+    </div>
+    <div class="floating-card fc2">
+      <span class="fc-emoji">🏥</span>
+      <span class="fc-label">Kesehatan 15%</span>
+    </div>
+    <div class="floating-card fc3">
+      <span class="fc-emoji">🛣️</span>
+      <span class="fc-label">Infrastruktur 20%</span>
+    </div>
+    <div class="floating-card fc4">
+      <span class="fc-emoji">💼</span>
+      <span class="fc-label">Pegawai 30%</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main-content">
+
+  <!-- ===== TAB: LEADERBOARD ===== -->
+  <section class="tab-section active" id="tab-leaderboard">
+    <div class="section-header">
+      <h2 class="section-title">🏆 Leaderboard Daerah</h2>
+      <p class="section-subtitle">Siapa daerah paling kaya? Bandingkan anggaran antar provinsi.</p>
+    </div>
+
+    <!-- Sort & Filter Controls -->
+    <div class="controls-bar">
+      <div class="sort-group">
+        <label class="control-label">Urutkan:</label>
+        <div class="sort-buttons">
+          <button class="sort-btn active" data-sort="pendapatan">💰 Pendapatan</button>
+          <button class="sort-btn" data-sort="belanja">📤 Belanja</button>
+          <button class="sort-btn" data-sort="defisit">📉 Defisit</button>
+        </div>
+      </div>
+      <div class="compare-group">
+        <button class="compare-btn" id="compareToggle">⚖️ Mode Komparasi</button>
+      </div>
+    </div>
+
+    <!-- Leaderboard Cards -->
+    <div class="leaderboard-grid" id="leaderboardGrid"></div>
+
+    <!-- Comparison Panel -->
+    <div class="compare-panel hidden" id="comparePanel">
+      <div class="compare-header">
+        <h3>⚖️ Komparasi Daerah</h3>
+        <p>Pilih 2 daerah dari leaderboard untuk dibandingkan</p>
+      </div>
+      <div class="compare-slots">
+        <div class="compare-slot" id="slot-a">
+          <div class="slot-placeholder">
+            <span>➕</span>
+            <p>Pilih Daerah A</p>
+          </div>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-slot" id="slot-b">
+          <div class="slot-placeholder">
+            <span>➕</span>
+            <p>Pilih Daerah B</p>
+          </div>
+        </div>
+      </div>
+      <div class="compare-result hidden" id="compareResult"></div>
+    </div>
+  </section>
+
+  <!-- ===== TAB: KALKULATOR ===== -->
+  <section class="tab-section" id="tab-kalkulator">
+    <div class="section-header">
+      <h2 class="section-title">💰 Kalkulator Pajak</h2>
+      <p class="section-subtitle">Masukkan nominal pajak yang kamu bayar dan lihat kemana uangmu pergi.</p>
+    </div>
+
+    <div class="kalkulator-layout">
+      <div class="kalkulator-form-card">
+        <h3 class="form-title">Input Pajak Kamu</h3>
+        <div class="form-group">
+          <label class="form-label">Pilih Daerah</label>
+          <select class="form-select" id="daerahSelect">
+            <option value="">-- Pilih Provinsi --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nominal Pajak (Rp)</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">Rp</span>
+            <input type="text" class="form-input" id="nominalInput" placeholder="1.000.000" />
+          </div>
+        </div>
+        <div class="quick-amounts">
+          <span class="quick-label">Cepat:</span>
+          <button class="quick-btn" data-amount="500000">500rb</button>
+          <button class="quick-btn" data-amount="1000000">1jt</button>
+          <button class="quick-btn" data-amount="5000000">5jt</button>
+          <button class="quick-btn" data-amount="10000000">10jt</button>
+        </div>
+        <button class="calc-btn" id="calcBtn">🔍 Hitung Alokasi</button>
+      </div>
+
+      <div class="kalkulator-result" id="kalkulatorResult">
+        <div class="result-placeholder">
+          <div class="placeholder-icon">💡</div>
+          <p>Masukkan nominal pajak dan pilih daerah untuk melihat alokasi anggaran personalmu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TAB: DETEKTIF ===== -->
+  <section class="tab-section" id="tab-detektif">
+    <div class="section-header">
+      <h2 class="section-title">🔍 Detektif Anggaran</h2>
+      <p class="section-subtitle">Proyek-proyek dengan anggaran fantastis yang bikin geleng-geleng kepala.</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-chip active" data-filter="all">Semua</button>
+      <button class="filter-chip" data-filter="Tinggi">🔴 Keanehan Tinggi</button>
+      <button class="filter-chip" data-filter="Sedang">🟡 Keanehan Sedang</button>
+    </div>
+
+    <div class="detektif-grid" id="detektifGrid"></div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-icon">🏛️</span>
+      <span class="brand-text">APBD<span class="brand-accent">Tracker</span></span>
+    </div>
+    <p class="footer-note">Data bersifat ilustratif untuk keperluan edukasi dan transparansi anggaran daerah. TA 2026.</p>
+    <p class="footer-copy">© 2026 APBDTracker — Dibuat untuk meningkatkan literasi anggaran publik.</p>
+  </div>
+</footer>
+
+<!-- ===== MODAL DETAIL ===== -->
+<div class="modal-overlay hidden" id="modalOverlay">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast hidden" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

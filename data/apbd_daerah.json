@@ -1,0 +1,92 @@
+[
+  {
+    "tahun_anggaran": 2026,
+    "wilayah": "Nusa Tenggara Barat",
+    "level": "Provinsi",
+    "total_pendapatan": 5800000000000,
+    "total_belanja": 5950000000000,
+    "defisit": 150000000000,
+    "alokasi_sektor": [
+      { "nama_sektor": "Pendidikan", "anggaran_nominal": 1487500000000, "persentase": 25.0, "icon": "graduation-cap" },
+      { "nama_sektor": "Kesehatan", "anggaran_nominal": 714000000000, "persentase": 12.0, "icon": "heart-pulse" },
+      { "nama_sektor": "Infrastruktur & Fasilitas Umum", "anggaran_nominal": 1190000000000, "persentase": 20.0, "icon": "building-road" },
+      { "nama_sektor": "Belanja Pegawai (Gaji ASN/Dinas)", "anggaran_nominal": 1785000000000, "persentase": 30.0, "icon": "briefcase" },
+      { "nama_sektor": "Lain-lain & Bansos", "anggaran_nominal": 773500000000, "persentase": 13.0, "icon": "hand-holding-heart" }
+    ]
+  },
+  {
+    "tahun_anggaran": 2026,
+    "wilayah": "DKI Jakarta",
+    "level": "Provinsi",
+    "total_pendapatan": 82000000000000,
+    "total_belanja": 85000000000000,
+    "defisit": 3000000000000,
+    "alokasi_sektor": [
+      { "nama_sektor": "Pendidikan", "anggaran_nominal": 21250000000000, "persentase": 25.0, "icon": "graduation-cap" },
+      { "nama_sektor": "Kesehatan", "anggaran_nominal": 12750000000000, "persentase": 15.0, "icon": "heart-pulse" },
+      { "nama_sektor": "Infrastruktur & Fasilitas Umum", "anggaran_nominal": 17000000000000, "persentase": 20.0, "icon": "building-road" },
+      { "nama_sektor": "Belanja Pegawai (Gaji ASN/Dinas)", "anggaran_nominal": 25500000000000, "persentase": 30.0, "icon": "briefcase" },
+      { "nama_sektor": "Lain-lain & Bansos", "anggaran_nominal": 8500000000000, "persentase": 10.0, "icon": "hand-holding-heart" }
+    ]
+  },
+  {
+    "tahun_anggaran": 2026,
+    "wilayah": "Jawa Barat",
+    "level": "Provinsi",
+    "total_pendapatan": 42000000000000,
+    "total_belanja": 43500000000000,
+    "defisit": 1500000000000,
+    "alokasi_sektor": [
+      { "nama_sektor": "Pendidikan", "anggaran_nominal": 10875000000000, "persentase": 25.0, "icon": "graduation-cap" },
+      { "nama_sektor": "Kesehatan", "anggaran_nominal": 6525000000000, "persentase": 15.0, "icon": "heart-pulse" },
+      { "nama_sektor": "Infrastruktur & Fasilitas Umum", "anggaran_nominal": 8700000000000, "persentase": 20.0, "icon": "building-road" },
+      { "nama_sektor": "Belanja Pegawai (Gaji ASN/Dinas)", "anggaran_nominal": 13050000000000, "persentase": 30.0, "icon": "briefcase" },
+      { "nama_sektor": "Lain-lain & Bansos", "anggaran_nominal": 4350000000000, "persentase": 10.0, "icon": "hand-holding-heart" }
+    ]
+  },
+  {
+    "tahun_anggaran": 2026,
+    "wilayah": "Jawa Timur",
+    "level": "Provinsi",
+    "total_pendapatan": 35000000000000,
+    "total_belanja": 36200000000000,
+    "defisit": 1200000000000,
+    "alokasi_sektor": [
+      { "nama_sektor": "Pendidikan", "anggaran_nominal": 9050000000000, "persentase": 25.0, "icon": "graduation-cap" },
+      { "nama_sektor": "Kesehatan", "anggaran_nominal": 5430000000000, "persentase": 15.0, "icon": "heart-pulse" },
+      { "nama_sektor": "Infrastruktur & Fasilitas Umum", "anggaran_nominal": 7240000000000, "persentase": 20.0, "icon": "building-road" },
+      { "nama_sektor": "Belanja Pegawai (Gaji ASN/Dinas)", "anggaran_nominal": 10860000000000, "persentase": 30.0, "icon": "briefcase" },
+      { "nama_sektor": "Lain-lain & Bansos", "anggaran_nominal": 3620000000000, "persentase": 10.0, "icon": "hand-holding-heart" }
+    ]
+  },
+  {
+    "tahun_anggaran": 2026,
+    "wilayah": "Kalimantan Timur",
+    "level": "Provinsi",
+    "total_pendapatan": 18500000000000,
+    "total_belanja": 19000000000000,
+    "defisit": 500000000000,
+    "alokasi_sektor": [
+      { "nama_sektor": "Pendidikan", "anggaran_nominal": 4750000000000, "persentase": 25.0, "icon": "graduation-cap" },
+      { "nama_sektor": "Kesehatan", "anggaran_nominal": 2850000000000, "persentase": 15.0, "icon": "heart-pulse" },
+      { "nama_sektor": "Infrastruktur & Fasilitas Umum", "anggaran_nominal": 3800000000000, "persentase": 20.0, "icon": "building-road" },
+      { "nama_sektor": "Belanja Pegawai (Gaji ASN/Dinas)", "anggaran_nominal": 5700000000000, "persentase": 30.0, "icon": "briefcase" },
+      { "nama_sektor": "Lain-lain & Bansos", "anggaran_nominal": 1900000000000, "persentase": 10.0, "icon": "hand-holding-heart" }
+    ]
+  },
+  {
+    "tahun_anggaran": 2026,
+    "wilayah": "Papua",
+    "level": "Provinsi",
+    "total_pendapatan": 9200000000000,
+    "total_belanja": 9800000000000,
+    "defisit": 600000000000,
+    "alokasi_sektor": [
+      { "nama_sektor": "Pendidikan", "anggaran_nominal": 2450000000000, "persentase": 25.0, "icon": "graduation-cap" },
+      { "nama_sektor": "Kesehatan", "anggaran_nominal": 1960000000000, "persentase": 20.0, "icon": "heart-pulse" },
+      { "nama_sektor": "Infrastruktur & Fasilitas Umum", "anggaran_nominal": 2940000000000, "persentase": 30.0, "icon": "building-road" },
+      { "nama_sektor": "Belanja Pegawai (Gaji ASN/Dinas)", "anggaran_nominal": 1960000000000, "persentase": 20.0, "icon": "briefcase" },
+      { "nama_sektor": "Lain-lain & Bansos", "anggaran_nominal": 490000000000, "persentase": 5.0, "icon": "hand-holding-heart" }
+    ]
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "PRY-2026-001",
+    "nama_pengadaan": "Pengadaan Pakaian Dinas dan Atribut Anggota Dewan",
+    "instansi_pemda": "DPRD Kabupaten X",
+    "pagu_anggaran": 1200000000,
+    "harga_satuan_per_orang_estimasi": 24000000,
+    "status": "Selesai Tender",
+    "level_keanehan": "Tinggi",
+    "fakta_menarik": "Setara dengan biaya perbaikan 6 ruang kelas SD yang rusak parah di kabupaten yang sama.",
+    "tags": ["DPRD", "Pakaian Dinas", "Fasilitas Mewah"]
+  },
+  {
+    "id": "PRY-2026-002",
+    "nama_pengadaan": "Pemeliharaan dan Rutin Kendaraan Dinas Jabatan Kepala Daerah",
+    "instansi_pemda": "Sekretariat Daerah Provinsi Y",
+    "pagu_anggaran": 850000000,
+    "status": "Sedang Berjalan",
+    "level_keanehan": "Sedang",
+    "fakta_menarik": "Anggaran servis dan bensin mobil dinas ini bisa dipakai untuk membeli 3 unit mobil ambulance baru.",
+    "tags": ["Mobil Dinas", "Operasional", "Kepala Daerah"]
+  },
+  {
+    "id": "PRY-2026-003",
+    "nama_pengadaan": "Pengadaan Souvenir dan Cinderamata Kunjungan Kerja Luar Negeri",
+    "instansi_pemda": "Dinas Luar Negeri Provinsi Z",
+    "pagu_anggaran": 620000000,
+    "status": "Selesai Tender",
+    "level_keanehan": "Tinggi",
+    "fakta_menarik": "Dana ini setara dengan beasiswa penuh 31 mahasiswa selama satu tahun di universitas negeri.",
+    "tags": ["Kunjungan Kerja", "Souvenir", "Luar Negeri"]
+  },
+  {
+    "id": "PRY-2026-004",
+    "nama_pengadaan": "Renovasi Ruang Rapat dan Lounge VIP Gedung DPRD",
+    "instansi_pemda": "Sekretariat DPRD Kabupaten A",
+    "pagu_anggaran": 3400000000,
+    "status": "Proses Lelang",
+    "level_keanehan": "Tinggi",
+    "fakta_menarik": "Biaya renovasi ruang rapat ini setara dengan membangun 17 unit rumah layak huni untuk warga miskin.",
+    "tags": ["DPRD", "Renovasi", "Fasilitas Mewah"]
+  },
+  {
+    "id": "PRY-2026-005",
+    "nama_pengadaan": "Pengadaan Laptop dan Gadget untuk Anggota Dewan",
+    "instansi_pemda": "Sekretariat DPRD Kota B",
+    "pagu_anggaran": 980000000,
+    "harga_satuan_per_orang_estimasi": 22000000,
+    "status": "Selesai Tender",
+    "level_keanehan": "Sedang",
+    "fakta_menarik": "Harga per unit laptop dinas ini 4x lipat harga laptop gaming kelas atas di pasaran.",
+    "tags": ["Gadget", "DPRD", "Teknologi"]
+  },
+  {
+    "id": "PRY-2026-006",
+    "nama_pengadaan": "Studi Banding ke Luar Negeri Pejabat Dinas Pariwisata",
+    "instansi_pemda": "Dinas Pariwisata Kabupaten C",
+    "pagu_anggaran": 1750000000,
+    "status": "Sedang Berjalan",
+    "level_keanehan": "Tinggi",
+    "fakta_menarik": "Biaya studi banding ke Eropa ini bisa membangun 5 gazebo wisata dan 2 toilet umum di objek wisata lokal.",
+    "tags": ["Studi Banding", "Pariwisata", "Luar Negeri"]
+  }
+]
