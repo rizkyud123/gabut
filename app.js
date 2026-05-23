@@ -25,7 +25,7 @@ const SECTOR_EMOJIS = {
 function formatRupiah(num, short = false) {
   if (short) {
     if (num >= 1e12) return `Rp${(num / 1e12).toFixed(1)}T`;
-    if (num >= 1e9) return `Rp${(num / 1e9).toFixed(1)}M`;
+    if (num >= 1e9) return `Rp${(num / 1e9).toFixed(1)}Md`;
     if (num >= 1e6) return `Rp${(num / 1e6).toFixed(1)}Jt`;
     return `Rp${num.toLocaleString('id-ID')}`;
   }
@@ -60,6 +60,8 @@ async function loadData() {
       fetch('./data/apbd_daerah.json'),
       fetch('./data/anggaran_unik.json'),
     ]);
+    if (!daerahRes.ok) throw new Error(`apbd_daerah.json: HTTP ${daerahRes.status}`);
+    if (!unikRes.ok) throw new Error(`anggaran_unik.json: HTTP ${unikRes.status}`);
     state.daerahData = await daerahRes.json();
     state.anggaran_unik = await unikRes.json();
     init();
@@ -156,7 +158,7 @@ function buildLeaderboardCard(d, rank) {
         <div class="metric-item">
           <div class="metric-label">Sektor Terbesar</div>
           <div class="metric-value" style="color:var(--text-primary);font-size:0.8rem">
-            ${d.alokasi_sektor.sort((a,b)=>b.persentase-a.persentase)[0].nama_sektor.split(' ')[0]}
+            ${[...d.alokasi_sektor].sort((a,b)=>b.persentase-a.persentase)[0].nama_sektor.split(' ')[0]}
           </div>
         </div>
       </div>
@@ -240,7 +242,7 @@ function renderCompareResult() {
     { label: 'Total Pendapatan', va: a.total_pendapatan, vb: b.total_pendapatan, fmt: true },
     { label: 'Total Belanja', va: a.total_belanja, vb: b.total_belanja, fmt: true },
     { label: 'Defisit/Surplus', va: a.defisit, vb: b.defisit, fmt: true, lowerBetter: true },
-    { label: 'Sektor Terbesar', va: a.alokasi_sektor.sort((x,y)=>y.persentase-x.persentase)[0].nama_sektor, vb: b.alokasi_sektor.sort((x,y)=>y.persentase-x.persentase)[0].nama_sektor, fmt: false },
+    { label: 'Sektor Terbesar', va: [...a.alokasi_sektor].sort((x,y)=>y.persentase-x.persentase)[0].nama_sektor, vb: [...b.alokasi_sektor].sort((x,y)=>y.persentase-x.persentase)[0].nama_sektor, fmt: false },
     { label: 'Alokasi Pendidikan', va: a.alokasi_sektor.find(s=>s.nama_sektor==='Pendidikan')?.persentase || 0, vb: b.alokasi_sektor.find(s=>s.nama_sektor==='Pendidikan')?.persentase || 0, fmt: false, suffix: '%' },
     { label: 'Alokasi Kesehatan', va: a.alokasi_sektor.find(s=>s.nama_sektor==='Kesehatan')?.persentase || 0, vb: b.alokasi_sektor.find(s=>s.nama_sektor==='Kesehatan')?.persentase || 0, fmt: false, suffix: '%' },
   ];
@@ -292,6 +294,7 @@ function openDetailModal(wilayah) {
       <div class="modal-sector-pct">${s.persentase}%</div>
     </div>`).join('');
 
+  const isModalDeficit = d.defisit > 0;
   document.getElementById('modalContent').innerHTML = `
     <div class="modal-wilayah">${d.wilayah}</div>
     <div class="modal-level">${d.level} · Tahun Anggaran ${d.tahun_anggaran}</div>
@@ -305,8 +308,8 @@ function openDetailModal(wilayah) {
         <div class="modal-metric-value" style="color:var(--warning)">${formatRupiah(d.total_belanja, true)}</div>
       </div>
       <div class="modal-metric">
-        <div class="modal-metric-label">Defisit</div>
-        <div class="modal-metric-value" style="color:var(--danger)">${formatRupiah(d.defisit, true)}</div>
+        <div class="modal-metric-label">${isModalDeficit ? 'Defisit' : 'Surplus'}</div>
+        <div class="modal-metric-value" style="color:${isModalDeficit ? 'var(--danger)' : 'var(--accent)'}">${formatRupiah(Math.abs(d.defisit), true)}</div>
       </div>
     </div>
     <div class="modal-sector-title">Alokasi Per Sektor</div>

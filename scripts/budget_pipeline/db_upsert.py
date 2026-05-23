@@ -55,13 +55,18 @@ def upsert_records(records: List[Dict[str, Any]]):
 def _record_to_row(r: Dict[str, Any]) -> Dict[str, Any]:
     # The transformer schema matches DB columns if you create them with same names.
     # We'll flatten alokasi_sektor into JSONB column.
+    total_pendapatan = r.get("total_pendapatan") or 0
+    total_belanja = r.get("total_belanja") or 0
+    # Compute defisit if not already present (positive = deficit, negative = surplus)
+    defisit = r.get("defisit", total_belanja - total_pendapatan)
     return {
         "tahun_anggaran": r.get("tahun_anggaran"),
         "wilayah": r.get("wilayah"),
         "level": r.get("level"),
         "parent_wilayah": r.get("parent_wilayah"),
-        "total_pendapatan": r.get("total_pendapatan"),
-        "total_belanja": r.get("total_belanja"),
+        "total_pendapatan": total_pendapatan,
+        "total_belanja": total_belanja,
+        "defisit": defisit,
         "alokasi_sektor": r.get("alokasi_sektor"),
     }
 
