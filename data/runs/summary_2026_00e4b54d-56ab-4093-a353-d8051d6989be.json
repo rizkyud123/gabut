@@ -1,0 +1,10 @@
+{
+  "run_id": "00e4b54d-56ab-4093-a353-d8051d6989be",
+  "started_at": "2026-05-23T07:57:35.815578Z",
+  "tahun": 2026,
+  "source": "apbd",
+  "inspect": true,
+  "results": {
+    "apbd": 0
+  }
+}
